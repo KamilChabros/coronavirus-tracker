@@ -2,6 +2,7 @@ package xyz.coronavirustracker.coronavirustracker.services;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
@@ -19,6 +20,10 @@ public class CoronaVirusDataService {
 
     /*after Spring construct instance of the service, execute method fetchVirusData*/
     @PostConstruct
+//    @Scheduled(cron = "sec min h d m y")
+    //(* * * * * *) means every second refreshing
+//    @Scheduled(cron = "* * * * * *")
+    @Scheduled(cron = "* * 1 * * *") // first hour everyday
     public void fetchVirusData() throws IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
