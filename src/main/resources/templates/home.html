@@ -9,12 +9,19 @@
 <h1>CoronaVirus Tracker</h1>
 <!--testName is attributeName in model - HomeController-->
 <!--<p th:text="${testName}">Place holder here!</p>-->
+<p>This application lists the current cases reported across the globe everyday</p>
 
+<div class="jumbotron">
+    <h1 class="display-4" th:text="${totalReportedCases}"></h1>
+    <p class="lead">Total cases reported as of today</p>
+</div>
+
+<div class="container">
 <table>
     <tr>
     <th>State</th>
     <th>Country</th>
-    <th>Total daily cases reported</th>
+    <th>Total cases reported</th>
     </tr>
     <tr th:each="locationStat : ${locationStats}">
         <td th:text="${locationStat.state}"></td>
@@ -23,6 +30,7 @@
         <td th:text="${locationStat.latestTotalCases}">0</td>
     </tr>
 </table>
+</div>
 
 </body>
 </html>
