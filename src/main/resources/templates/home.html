@@ -22,12 +22,14 @@
     <th>State</th>
     <th>Country</th>
     <th>Total cases reported</th>
+    <th>Changes since last day</th>
     </tr>
     <tr th:each="locationStat : ${locationStats}">
         <td th:text="${locationStat.state}"></td>
         <td th:text="${locationStat.country}"></td>
 <!--        '0' is default value-->
         <td th:text="${locationStat.latestTotalCases}">0</td>
+        <td th:text="${locationStat.diffFromPrevDay}">0</td>
     </tr>
 </table>
 </div>
