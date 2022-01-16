@@ -4,7 +4,7 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-import xyz.coronavirustracker.coronavirustracker.services.models.LocationStats;
+import xyz.coronavirustracker.coronavirustracker.models.LocationStats;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
