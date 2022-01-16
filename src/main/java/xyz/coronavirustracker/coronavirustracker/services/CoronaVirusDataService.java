@@ -24,6 +24,10 @@ public class CoronaVirusDataService {
     /*thanks to code below, we can create instance of LocationStats*/
     private List<LocationStats> allStats = new ArrayList<>();
 
+    public List<LocationStats> getAllStats() {
+        return allStats;
+    }
+
     /*after Spring construct instance of the service, execute method fetchVirusData*/
     @PostConstruct
 //    @Scheduled(cron = "sec min h d m y")
